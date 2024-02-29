@@ -15,7 +15,7 @@
     background-attachment: fixed; 
 }
 
-/* LOGIN FORM */
+/* SIGN-UP FORM */
 .login-container {
     text-align: center;
     width: 550px;
@@ -58,4 +58,8 @@
 .login-container p {
     margin-top: 15px;
     text-align: center;
+}
+
+label{
+    margin-left: -40px;
 }

@@ -3,9 +3,48 @@
     <head>
         <!-- Compiled and minified CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <!-- Font Awesome Icons-->
+        <script src="https://kit.fontawesome.com/efef0daf69.js" crossorigin="anonymous"></script>
+        <!-- Font Awesone cdn -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- Material Icons -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="adminHomePage.css">
         <title>Admin Web Calendar</title>
     </head>
     <body>
+        <!-- NavBar -->
+        <nav class="nav-extended">
+            <div class="nav-wrapper" style="background-color: #00290f">
+                <a href="#" class="brand-logo" style="margin-left: 90px;">Logo</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right: 90px;">
+                    <li>
+                        <a href="#" style="color: #ffffff;">
+                            <i class="fa-solid fa-user left" style="color: #ffffff;"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="nav-content" style="background-color: #1d6b3a; ">
+                <ul class="tabs tabs-transparent">
+                    <li class="tab"><a class="active" href="#accounts">Accounts</a></li>
+                    <li class="tab"><a href="#manage-accounts">Manage Events</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <li><a href="collapsible.html">JavaScript</a></li>
+        </ul>
+        
+        <!-- Tabs in NavBar -->
+        <div class="container">
+            <div id="accounts" class="col s12">Test 1</div>
+            <div id="manage-accounts" class="col s12">Test 2</div>
+        </div>
         
         
 
@@ -13,5 +52,12 @@
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $('.sidenav').sidenav();
+                $('.tabs').tabs();
+            });
+        </script>
     </body>
 </html>

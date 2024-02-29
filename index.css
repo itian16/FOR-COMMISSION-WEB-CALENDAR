@@ -1,0 +1,54 @@
+ @import url('https://fonts.cdnfonts.com/css/pp-neue-montreal');
+ 
+ body {
+    font-family: 'PP Neue Montreal', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('ImageSrc/Login-Signup\ BG-IMAGE.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; 
+}
+.login-container {
+    width: 550px;
+    height: 750px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 50px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+.login-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: calc(80% - 40px);
+    padding: 10px;
+    margin-bottom: 15px;
+    margin-left: 60px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+.login-container input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #ffffff;
+    cursor: pointer;
+}
+.login-container input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+.login-container p {
+    margin-top: 15px;
+    text-align: center;
+}

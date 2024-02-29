@@ -1,3 +1,11 @@
+body {
+    background-image: url('Imagesrc/Admin-Background.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 .tabs {
     margin-left: 90px;
 }
@@ -5,6 +13,11 @@
 /* Highlight color for Table in Account Tab*/
 table.highlight tbody tr:hover {
     background-color: #57736132
+}
+
+.custom-th {
+    color: #E1E1E1;
+    background-color: #00290f; /* Change this color to the desired background color */
 }
 
 /* CSS for Calendar Tab */

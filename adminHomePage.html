@@ -92,15 +92,9 @@
                             <div id="event-section">
                                 <h3>Add Event</h3>
                                 <input type="date" id="eventDate">
-                                <input type="text"
-                                    id="eventTitle"
-                                    placeholder="Event Title">
-                                <input type="text"
-                                    id="eventDescription"
-                                    placeholder="Event Description">
-                                <button id="addEvent" onclick="addEvent()">
-                                    Add
-                                </button>
+                                <input type="text" id="eventTitle" placeholder="Event Title">
+                                <input type="text" id="eventDescription" placeholder="Event Description">
+                                <button id="addEvent" onclick="addEvent()"> Add </button>
                             </div>
                             <div id="reminder-section">
                                 <h3>Reminders</h3>
@@ -109,10 +103,7 @@
                                     <li data-event-id="1">
                                         <strong>Event Title</strong>
                                         - Event Description on Event Date
-                                        <button class="delete-event"
-                                            onclick="deleteEvent(1)">
-                                            Delete
-                                        </button>
+                                        <button class="delete-event" onclick="deleteEvent(1)"> Delete </button>
                                     </li>
                                 </ul>
                             </div>
@@ -120,18 +111,10 @@
                         <div id="right">
                             <h3 id="monthAndYear"></h3>
                             <div class="button-container-calendar">
-                                <button id="previous"
-                                        onclick="previous()">
-                                    ‹
-                                </button>
-                                <button id="next"
-                                        onclick="next()">
-                                    ›
-                                </button>
+                                <button id="previous" onclick="previous()"> ‹ </button>
+                                <button id="next" onclick="next()"> › </button>
                             </div>
-                            <table class="table-calendar"
-                                id="calendar"
-                                data-lang="en">
+                            <table class="table-calendar" id="calendar" data-lang="en">
                                 <thead id="thead-month"></thead>
                                 <!-- Table body for displaying the calendar -->
                                 <tbody id="calendar-body"></tbody>
@@ -157,10 +140,19 @@
                                 <select id="year" onchange="jump()"></select>
                             </div>
                         </div>
+
+                        <!-- Separate area for displaying events/reminders -->
+                        <div id="event-display-panel">
+                            <!-- Events/reminders for the selected day will be displayed here -->
+                        </div>
                     </div>
                 </div>
             </div>
+
+            
         </div>
+
+        
         
         
         

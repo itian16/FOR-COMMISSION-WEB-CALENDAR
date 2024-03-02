@@ -30,7 +30,7 @@ table.highlight tbody tr:hover {
     overflow: auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
 }
  
 /* Event section styling */
@@ -149,6 +149,7 @@ table.highlight tbody tr:hover {
     border: 1px solid green;
     border-radius: 4px;
     padding: 5px 10px;
+    margin-top: 10px; 
 }
  
 /* Calendar table */
@@ -163,6 +164,11 @@ table.highlight tbody tr:hover {
     border: 1px solid #e2e2e2;
     text-align: center;
     vertical-align: top;
+}
+
+/* Date picker */
+.date-picker {
+    cursor: pointer;
 }
  
 /* Date picker */
@@ -230,4 +236,50 @@ table.highlight tbody tr:hover {
     border: 1px solid #bfc5c5;
     border-radius: 3px;
     padding: 5px 1em;
+}
+
+/* Media Query for Mobile Devices */
+@media only screen and (max-width: 600px) {
+    .container-calendar {
+        padding: 10px;
+    }
+
+    .button-container-calendar {
+        margin-top: 20px;
+    }
+}
+
+/* Style for the event display panel */
+#event-display-panel {
+    background: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+/* Style for event cards */
+.event-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.event-card h3 {
+    margin-top: 0;
+    color: green;
+}
+
+.event-card p {
+    margin: 5px 0;
+}
+
+/* Style for delete button in event cards */
+.delete-event {
+    background: rgb(237, 19, 19);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
 }

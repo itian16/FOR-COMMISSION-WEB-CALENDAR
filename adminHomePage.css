@@ -7,7 +7,12 @@ body {
 }
 
 .tabs {
-    margin-left: 90px;
+    display: flex;
+    justify-content: center;
+}
+
+.tabs li {
+    flex: 0 0 auto;
 }
 
 /* Highlight color for Table in Account Tab*/
@@ -25,12 +30,12 @@ table.highlight tbody tr:hover {
 .container-calendar {
     background: #ffffff;
     padding: 15px;
-    max-width: 900px;
     margin: 0 auto;
     overflow: auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
+    border-radius: 15px; /* Adjust the value as needed for the desired rounding */
 }
  
 /* Event section styling */

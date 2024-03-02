@@ -239,27 +239,39 @@ function daysInMonth(iMonth, iYear) {
 // Call the showCalendar function initially to display the calendar
 showCalendar(currentMonth, currentYear);
 
+// Add event listeners to all date cells
+const dateCells = document.querySelectorAll('.date-picker');
+dateCells.forEach(cell => {
+    cell.addEventListener('click', handleDayClick);
+});
+
 // Function to handle click event on each day in the calendar
 function handleDayClick(event) {
-    // Get the clicked day
-    const selectedDay = event.target.innerText;
-    
-    // You can fetch events/reminders for the selected day from your data source (e.g., an array)
-    // For demonstration purposes, let's assume events are stored in an array called 'events'
-    const eventsForSelectedDay = events.filter(event => event.date === selectedDay);
+    // Get the clicked day, month, and year
+    const selectedDay = parseInt(event.target.innerText);
+    const selectedMonth = parseInt(event.target.getAttribute('data-month')) - 1;
+    const selectedYear = parseInt(event.target.getAttribute('data-year'));
 
-    // Display events/reminders for the selected day in the event display panel
-    displayEvents(eventsForSelectedDay);
+    // Filter events for the selected date
+    const eventsForSelectedDate = events.filter(event => {
+        const eventDate = new Date(event.date);
+        return eventDate.getDate() === selectedDay &&
+               eventDate.getMonth() === selectedMonth &&
+               eventDate.getFullYear() === selectedYear;
+    });
+
+    // Display events for the selected date
+    displayEvents(eventsForSelectedDate);
 }
 
-// Function to display events/reminders for the selected day in the event display panel
+// Function to display events for the selected date in the event display panel
 function displayEvents(events) {
     const eventDisplayPanel = document.getElementById('event-display-panel');
 
     // Clear previous events displayed
     eventDisplayPanel.innerHTML = '';
 
-    // Check if there are events for the selected day
+    // Check if there are events for the selected date
     if (events.length === 0) {
         eventDisplayPanel.innerHTML = '<p>No events for this day</p>';
     } else {

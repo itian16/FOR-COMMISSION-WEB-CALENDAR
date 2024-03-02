@@ -28,17 +28,13 @@
             </div>
             <div class="nav-content" style="background-color: #1d6b3a; ">
                 <ul class="tabs tabs-transparent">
-                    <li class="tab"><a class="active" href="#accounts">Accounts</a></li>
-                    <li class="tab"><a href="#manage-events">Manage Events</a></li>
+                    <li class="tab"><a class="active" href="#accounts" style="font-size: 15px; font-weight: bold;">Accounts</a></li>
+                    <li class="tab"><a href="#manage-events" style="font-size: 15px; font-weight: bold;">Manage Events</a></li>
                 </ul>
             </div>
         </nav>
         
-        <ul class="sidenav" id="mobile-demo">
-            <li><a href="sass.html">Sass</a></li>
-            <li><a href="badges.html">Components</a></li>
-            <li><a href="collapsible.html">JavaScript</a></li>
-        </ul>
+        <ul class="sidenav" id="mobile-demo"></ul>
         
         <br><br>
         <!-- Accounts Tab -->
@@ -80,27 +76,21 @@
                 </div>
             </div>
         </div>
+        <br><br>
 
         <!-- Manage Events Tab -->
         <div class="container">
-            <div id="manage-events" class="col s12">
-                <!-- Main wrapper for the calendar application -->
-                <div class="wrapper">
-                    <div class="container-calendar">
+            <div id="manage-events" class="container-calendar">
+                <div class="row">
+                    <div class="col s12 m6">
                         <div id="left">
                             <h1>Dynamic Calendar</h1>
                             <div id="event-section">
                                 <h3>Add Event</h3>
                                 <input type="date" id="eventDate">
-                                <input type="text"
-                                    id="eventTitle"
-                                    placeholder="Event Title">
-                                <input type="text"
-                                    id="eventDescription"
-                                    placeholder="Event Description">
-                                <button id="addEvent" onclick="addEvent()">
-                                    Add
-                                </button>
+                                <input type="text" id="eventTitle" placeholder="Event Title">
+                                <input type="text" id="eventDescription" placeholder="Event Description">
+                                <button id="addEvent" onclick="addEvent()"> Add </button>
                             </div>
                             <div id="reminder-section">
                                 <h3>Reminders</h3>
@@ -109,29 +99,20 @@
                                     <li data-event-id="1">
                                         <strong>Event Title</strong>
                                         - Event Description on Event Date
-                                        <button class="delete-event"
-                                            onclick="deleteEvent(1)">
-                                            Delete
-                                        </button>
+                                        <button class="delete-event" onclick="deleteEvent(1)"> Delete </button>
                                     </li>
                                 </ul>
                             </div>
                         </div>
+                    </div>
+                    <div class="col s12 m6">
                         <div id="right">
                             <h3 id="monthAndYear"></h3>
                             <div class="button-container-calendar">
-                                <button id="previous"
-                                        onclick="previous()">
-                                    ‹
-                                </button>
-                                <button id="next"
-                                        onclick="next()">
-                                    ›
-                                </button>
+                                <button id="previous" onclick="previous()"> ‹ </button>
+                                <button id="next" onclick="next()"> › </button>
                             </div>
-                            <table class="table-calendar"
-                                id="calendar"
-                                data-lang="en">
+                            <table class="table-calendar" id="calendar" data-lang="en">
                                 <thead id="thead-month"></thead>
                                 <!-- Table body for displaying the calendar -->
                                 <tbody id="calendar-body"></tbody>
@@ -159,9 +140,20 @@
                         </div>
                     </div>
                 </div>
+    
+    
+                <div class="row">
+                    <div class="col s12">
+                        <div id="event-display-panel">
+                            <!-- Event display panel content -->
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
+        
+        <div style="height: 500px;"></div>
+        
         <!-- jquery cdn -->
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <!-- Compiled and minified JavaScript -->

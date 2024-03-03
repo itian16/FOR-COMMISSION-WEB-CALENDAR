@@ -47,8 +47,10 @@ function deleteEvent(eventId) {
     if (eventIndex !== -1) {
         // Remove the event from the events array
         events.splice(eventIndex, 1);
-        showCalendar(currentMonth, currentYear);
+        // Update the reminders section
         displayReminders();
+        // Update the event display panel
+        displayEvents(events); // Re-display all events in the event display panel
     }
 }
  
@@ -148,9 +150,9 @@ function previous() {
  
 // Function to jump to a specific month and year
 function jump() {
-    currentYear = parseInt(selectYear.value);
-    currentMonth = parseInt(selectMonth.value);
-    showCalendar(currentMonth, currentYear);
+    let selectedMonth = parseInt(selectMonth.value);
+    let selectedYear = parseInt(selectYear.value);
+    showCalendar(selectedMonth, selectedYear);
 }
  
 // Function to display the calendar
@@ -189,7 +191,6 @@ function showCalendar(month, year) {
                 // Check if there are events on this date
                 if (hasEventOnDate(date, month, year)) {
                     cell.classList.add("event-marker");
-                    cell.appendChild(createEventTooltip(date, month, year));
                 }
  
                 row.appendChild(cell);
@@ -199,6 +200,13 @@ function showCalendar(month, year) {
         tbl.appendChild(row);
     }
  
+    // Reattach event listeners to all date cells
+    const dateCells = document.querySelectorAll('.date-picker');
+    dateCells.forEach(cell => {
+        cell.addEventListener('click', handleDayClick);
+    });
+
+    // Call displayReminders to update the event display panel
     displayReminders();
 }
  
@@ -281,8 +289,7 @@ function displayEvents(events) {
             eventCard.classList.add('event-card');
             eventCard.innerHTML = `
                 <h3>${event.title}</h3> 
-                <p>${event.description}</p>
-                <button class="delete-event" onclick="deleteEvent(${event.id})">Delete</button>`;
+                <p>${event.description}</p>`;
             eventDisplayPanel.appendChild(eventCard);
         });
     }

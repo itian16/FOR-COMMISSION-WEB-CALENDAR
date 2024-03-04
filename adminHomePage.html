@@ -52,7 +52,7 @@
                             </tr>
                         </thead>
                 
-                        <tbody>
+                        <tbody id="user-list">
                             <tr>
                                 <td>1</td>
                                 <td>John Doe</td>
@@ -87,9 +87,9 @@
                             <h1>Dynamic Calendar</h1>
                             <div id="event-section">
                                 <h3>Add Event</h3>
-                                <input type="date" id="eventDate">
+                                <input type="text" id="eventDate" placeholder="Select Date" class="datepicker">
                                 <input type="text" id="eventTitle" placeholder="Event Title">
-                                <input type="text" id="eventDescription" placeholder="Event Description">
+                                <input type="text" id="eventDescription" placeholder="Event Description"><br>
                                 <button id="addEvent" onclick="addEvent()"> Add </button>
                             </div>
                             <div id="reminder-section">
@@ -140,11 +140,12 @@
                         </div>
                     </div>
                 </div>
-    
-    
+
                 <div class="row">
                     <div class="col s12">
                         <div id="event-display-panel">
+                            <h6>Events for the Day</h6>
+                            <div style="height: 100px;"></div>
                             <!-- Event display panel content -->
                         </div>
                     </div>
@@ -152,20 +153,33 @@
             </div>
         </div>
         
-        <div style="height: 500px;"></div>
+        <div style="height: 50px;"></div>
         
         <!-- jquery cdn -->
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <!-- Compiled and minified JavaScript -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
         <script src="adminManagePage.js"></script>
+        <script src="adminAccountPage.js"></script>
 
         <script>
+            // Call displayData function after DOM content is loaded
+            document.addEventListener("DOMContentLoaded", function() {
+                displayData();
+            });
+            
             $(document).ready(function(){
                 $('.sidenav').sidenav();
                 $('.tabs').tabs();
             });
- 
+            
+            $(document).ready(function(){
+                $('select').formSelect();
+            });
+
+            $(document).ready(function(){
+                $('.datepicker').datepicker();
+            });
         </script>
     </body>
 </html>

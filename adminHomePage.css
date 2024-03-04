@@ -67,13 +67,13 @@ table.highlight tbody tr:hover {
     width: 80%;
 }
  
-#event-section button {
+#addEvent {
     background: green;
-    color: white;
     border: none;
     padding: 5px 10px;
     cursor: pointer;
 }
+
  
 .event-marker {
     position: relative;
@@ -178,7 +178,7 @@ table.highlight tbody tr:hover {
  
 /* Date picker */
 .date-picker.selected {
-    background-color: #f2f2f2;
+
     font-weight: bold;
     outline: 1px dashed #00BCD4;
 }
@@ -232,15 +232,16 @@ table.highlight tbody tr:hover {
     margin-top: 1em;
     border-top: 1px solid #dadada;
     padding: 10px 0;
+    position: relative;
+    z-index: 1;
+    overflow: visible; /* Allow overflow */
+    /* Ensure the container has enough height to display all options */
 }
  
-.footer-container-calendar select {
-    cursor: pointer;
-    background: #ffffff;
-    color: #585858;
-    border: 1px solid #bfc5c5;
-    border-radius: 3px;
-    padding: 5px 1em;
+
+.select-dropdown.dropdown-content {
+    max-height: 200px; /* Adjust the maximum height as needed */
+    overflow-y: auto; /* Enable vertical scrolling if needed */
 }
 
 /* Media Query for Mobile Devices */
@@ -259,7 +260,7 @@ table.highlight tbody tr:hover {
     background: #f9f9f9;
     padding: 20px;
     border: 1px solid #ccc;
-    margin-top: 20px;
+
 }
 
 /* Style for event cards */
@@ -273,7 +274,7 @@ table.highlight tbody tr:hover {
 
 .event-card h3 {
     margin-top: 0;
-    color: green;
+    color: #00290f;
 }
 
 .event-card p {
@@ -288,3 +289,20 @@ table.highlight tbody tr:hover {
     padding: 5px 10px;
     cursor: pointer;
 }
+
+.confirmation-btns .datepicker-done {
+    background-color: #00290f;
+    color: #f3f3f3; /* Text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    cursor: pointer; /* Add pointer cursor */
+}
+
+.datepicker-date-display{
+    background-color: #329958;
+}
+
+.confirmation-btns .datepicker-cancel {
+    color: #00290f; /* Text color */
+}
+

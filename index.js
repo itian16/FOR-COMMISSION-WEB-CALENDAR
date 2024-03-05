@@ -17,8 +17,11 @@ document.addEventListener("DOMContentLoaded", function() {
         if (user) {
             // Check if password matches
             if (user.password === password) {
+                // Store user data in localStorage
+                localStorage.setItem('currentUser', JSON.stringify(user));
+
                 // Check if it's the admin account
-                if (user.isAdmin) {
+                if (user.email === "admin" && user.password === "admin") { // Check if user is an admin
                     // Redirect to admin home page
                     window.location.href = "adminHomePage.html";
                 } else {

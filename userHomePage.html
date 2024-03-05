@@ -62,10 +62,7 @@
         </a>
         
         <!-- SIDE NAVIGATION -->
-        <ul class="sidenav left-align" id="mobile-demo" style="overflow: hidden; border-radius: 10px; margin-top: 70px;">
-            <img src="ImageSources/SideNav-ProfilePic.png" width="150px" height="150px" style="margin-top: 100px; margin-left: 75px;">
-            <h5 class="sideNav-Name">John Doe</h5>
-                    
+        <ul class="sidenav left-align" id="mobile-demo" style="overflow: hidden; border-radius: 10px; margin-top: 70px;">           
             <div class="sideNav-Items">
                 <li>
                     <a href="#profileModal" class="modal-trigger" style="font-size: 17px;">
@@ -78,7 +75,19 @@
                 </li>
             </div>
         </ul>
-        
+
+        <!-- Modal Structure -->
+        <div id="profileModal" class="modal">
+            <div class="modal-content">
+                <h1 style="color: #00290F;">User Profile</h1>
+                <p style="margin-bottom: -25px;" id="profileName"></p>
+                <p style="margin-bottom: -25px;" id="profileStudentID"></p>
+                <p id="profileEmail"></p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+            </div>
+        </div>
 
         <!-- HEADER SECTION -->
         <div id="Home-header">

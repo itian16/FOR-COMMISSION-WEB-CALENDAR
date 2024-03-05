@@ -84,3 +84,33 @@ function updateNotificationBar() {
 document.addEventListener('DOMContentLoaded', function () {
     updateNotificationBar();
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Retrieve user data from localStorage
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    if (currentUser) {
+        // Populate My Profile tab with user's full name
+        const profileTab = document.querySelector('.modal-trigger');
+        profileTab.innerHTML = `<i class="fa-regular fa-user"></i>${currentUser.fullName}`;
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Retrieve user data from localStorage
+    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    if (currentUser) {
+        // Populate My Profile tab with user's full name
+        const profileTab = document.querySelector('.modal-trigger');
+        profileTab.innerHTML = `<i class="fa-regular fa-user"></i>${currentUser.fullName}`;
+
+        // Display user's information in the modal
+        const profileModal = document.getElementById('profileModal');
+        const profileName = document.getElementById('profileName');
+        const profileStudentID = document.getElementById('profileStudentID');
+        const profileEmail = document.getElementById('profileEmail');
+
+        profileName.textContent = `Name: ${currentUser.fullName}`;
+        profileStudentID.textContent = `Student ID: ${currentUser.studentID}`;
+        profileEmail.textContent = `Email: ${currentUser.email}`;
+    }
+});

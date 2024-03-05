@@ -13,11 +13,11 @@
 
 #mobile-demo{
    background-color: white;
-   height: 500px;
+   height: 140px;
 }
 
 .sideNav-Items{
-  margin-top: 50px;
+  margin-top: 20px;
   text-align: left;
 }
 
@@ -28,13 +28,17 @@
   color:#033016;
 }
 
+.sideNav-Items li:hover {
+  background-color: #F9E887;
+}
+
 /* --- For Profile Modal --- */
 #profileModal{
-  width: 500px;
-  height: 400px;
-  height: 1000px;
+  width: 650px;
+  height: 355px;
   border-radius: 25px;
-  padding: 50px;
+  padding: 15px;
+  overflow: hidden;
 }
 
 #profileModal p{
@@ -538,4 +542,15 @@ table.highlight tbody tr:hover {
 
 .confirmation-btns .datepicker-cancel {
     color: #00290f; /* Text color */
+}
+
+#notificationModal {
+    position: absolute;
+    background-color: white; /* Adjust background color as needed */
+    padding: 0px; /* Adjust padding as needed */
+    width: 500px; /* Adjust width as needed */
+    border-radius: 5px; /* Adjust border radius as needed */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+    z-index: 9999; /* Ensure it's above other elements */
+    display: none; /* Initially hide it */
 }

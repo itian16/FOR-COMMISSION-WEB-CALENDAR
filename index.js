@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault(); // Prevent form submission
 
         // Get form values
-        const email = loginForm.querySelector("input[name='username']").value;
+        const email = loginForm.querySelector("input[name='email']").value;
         const password = loginForm.querySelector("input[name='password']").value;
 
         // Retrieve user data from localStorage

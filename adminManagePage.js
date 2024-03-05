@@ -1,5 +1,5 @@
-// Define an array to store events
-let events = [];
+// Define an array to store events, initialize it with events from local storage if available
+let events = JSON.parse(localStorage.getItem('events')) || [];
  
 // letiables to store event input fields and reminder list
 let eventDateInput =
@@ -36,9 +36,26 @@ function addEvent() {
         eventTitleInput.value = "";
         eventDescriptionInput.value = "";
         displayReminders();
+
+        // Dispatch custom event to notify user page about new event
+        const newEventAddedEvent = new Event('newEventAdded');
+        document.dispatchEvent(newEventAddedEvent);
+        
+        // Store new events in localStorage
+        localStorage.setItem('events', JSON.stringify(events));
+
+        // Display a notification about the new event
+        displayNotification(title);
     }
 }
- 
+
+// Function to display a notification about the newly added event
+function displayNotification(eventTitle) {  
+    // Add the event title to the notification bar
+    let notificationBar = document.getElementById('notificationBar');
+    notificationBar.innerHTML += `<p>New event added: ${eventTitle}</p>`;
+}
+
 // Function to delete an event by ID
 function deleteEvent(eventId) {
     // Find the index of the event with the given ID
@@ -52,6 +69,12 @@ function deleteEvent(eventId) {
         // Update the event display panel
         displayEvents(events); // Re-display all events in the event display panel
     }
+    
+    // Dispatch custom event to notify user page about event deletion
+    const eventDeletedEvent = new Event('eventDeleted');
+    document.dispatchEvent(eventDeletedEvent);
+    
+    localStorage.setItem('events', JSON.stringify(events));
 }
  
 // Function to display reminders sorted from nearest date to furthest
@@ -80,6 +103,7 @@ function displayReminders() {
             reminderList.appendChild(listItem);
         }
     }
+    localStorage.setItem('events', JSON.stringify(events));
 }
  
 // Function to generate a range of 
@@ -208,6 +232,7 @@ function showCalendar(month, year) {
 
     // Call displayReminders to update the event display panel
     displayReminders();
+    localStorage.setItem('events', JSON.stringify(events));
 }
  
 // Function to create an event tooltip

@@ -226,3 +226,316 @@
   background-size:cover; 
   background-position: center; 
 }
+
+#calendarLabel{
+  color: white;
+  text-align: center;
+  animation: fadeInForMeet 1s ease-in; 
+  padding: 30px;
+  background-color: #01160a;
+  border-radius: 30px 30px 0px 0px ;
+  width: 1000px; 
+  margin: 0 auto;
+}
+
+#manage-events{
+  width: 1000px;
+  padding: 50px;
+  animation: fadeInForCont-researchers 1s ease-out; 
+}
+
+#event-display-panel {
+  width: 800px; /* Set the width of the container */
+  word-wrap: break-word; /* For non-flexible layouts */
+  overflow-wrap: break-word; /* For flexible layouts */
+}
+
+body {
+    background-image: url('Imagesrc/Admin-Background.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+}
+
+.tabs li {
+    flex: 0 0 auto;
+}
+
+/* Highlight color for Table in Account Tab*/
+table.highlight tbody tr:hover {
+    background-color: #57736132
+}
+
+.custom-th {
+    color: #E1E1E1;
+    background-color: #00290f; /* Change this color to the desired background color */
+}
+
+.container-calendar {
+    background: #ffffff;
+    padding: 15px;
+    margin: 0 auto;
+    overflow: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    border-radius: 0px 0px 30px 30px;
+}
+ 
+/* Event section styling */
+#event-section {
+    padding: 10px;
+    background: #f5f5f5;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+}
+ 
+.container-calendar #left h1 {
+    color: green;
+    text-align: center;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 10px 0;
+}
+ 
+#event-section h3 {
+    color: green;
+    font-size: 10px;
+    margin: 0;
+}
+ 
+#event-section input[type="date"],
+#event-section input[type="text"] {
+    margin: 10px 0;
+    padding: 5px;
+    width: 80%;
+}
+ 
+#addEvent {
+    background: green;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+ 
+.event-marker {
+    position: relative;
+}
+ 
+.event-marker::after {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+ 
+.event-tooltip {
+    position: absolute;
+    background-color: rgba(234, 232, 232, 0.763);
+    color: black;
+    padding: 10px;
+    border-radius: 4px;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    transition: all 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+ 
+.event-marker:hover .event-tooltip {
+    display: block;
+}
+ 
+#reminder-section {
+    padding: 10px;
+    background: #f5f5f5;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+}
+ 
+#reminder-section h3 {
+    color: green;
+    font-size: 18px;
+    margin: 0;
+}
+ 
+#reminderList {
+    list-style: none;
+    padding: 0;
+}
+ 
+#reminderList li {
+    margin: 5px 0;
+    font-size: 16px;
+}
+ 
+.delete-event {
+    background: rgb(237, 19, 19);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 10px;
+    align-items: right;
+}
+ 
+.button-container-calendar button {
+    cursor: pointer;
+    background: green;
+    color: #fff;
+    border: 1px solid green;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin-top: 10px; 
+}
+ 
+.table-calendar {
+    border-collapse: collapse;
+    width: 100%;
+}
+ 
+.table-calendar td,
+.table-calendar th {
+    padding: 5px;
+    border: 1px solid #e2e2e2;
+    text-align: center;
+    vertical-align: top;
+}
+
+.date-picker {
+    cursor: pointer;
+}
+ 
+.date-picker.selected {
+
+    font-weight: bold;
+    outline: 1px dashed #00BCD4;
+}
+ 
+.date-picker.selected span {
+    border-bottom: 2px solid currentColor;
+}
+ 
+.date-picker:nth-child(1) {
+    color: red;
+    /* Sunday */
+}
+ 
+.date-picker:nth-child(6) {
+    color: green;
+    /* Friday */
+}
+ 
+.date-picker:hover {
+    background-color: green;
+    color: white;
+    cursor: pointer;
+}
+ 
+#monthAndYear {
+    text-align: center;
+    margin-top: 0;
+}
+ 
+.button-container-calendar {
+    position: relative;
+    margin-bottom: 1em;
+    overflow: hidden;
+    clear: both;
+}
+ 
+#previous {
+    float: left;
+}
+ 
+#next {
+    float: right;
+}
+ 
+.footer-container-calendar {
+    margin-top: 1em;
+    border-top: 1px solid #dadada;
+    padding: 10px 0;
+    position: relative;
+    z-index: 1;
+    overflow: visible; /* Allow overflow */
+    /* Ensure the container has enough height to display all options */
+}
+ 
+
+.select-dropdown.dropdown-content {
+    max-height: 200px; /* Adjust the maximum height as needed */
+    overflow-y: auto; /* Enable vertical scrolling if needed */
+}
+
+@media only screen and (max-width: 600px) {
+    .container-calendar {
+        padding: 10px;
+    }
+
+    .button-container-calendar {
+        margin-top: 20px;
+    }
+}
+
+#event-display-panel {
+    background: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ccc;
+
+}
+
+.event-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.event-card h3 {
+    margin-top: 0;
+    color: #00290f;
+}
+
+.event-card p {
+    margin: 5px 0;
+}
+
+.delete-event {
+    background: rgb(237, 19, 19);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.confirmation-btns .datepicker-done {
+    background-color: #00290f;
+    color: #f3f3f3; /* Text color */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    cursor: pointer; /* Add pointer cursor */
+}
+
+.datepicker-date-display{
+    background-color: #329958;
+}
+
+.confirmation-btns .datepicker-cancel {
+    color: #00290f; /* Text color */
+}

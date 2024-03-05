@@ -10,7 +10,7 @@
         <!-- Material Icons -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="adminHomePage.css">
-        <title>Admin Web Calendar</title>
+        <title>𝗔𝗱𝗺𝗶𝗻 | 𝗨𝗻𝗶-𝗖𝗮𝗹𝗲𝗻𝗱𝗮𝗿</title>
     </head>
     <body>
         <!-- NavBar -->
@@ -72,18 +72,18 @@
         <!-- Manage Events Tab -->
         <div class="container">
             <div id="manage-events" class="container-calendar">
-                <div class="row">
+                <div class="row" style="padding: 40px;">
                     <div class="col s12 m6">
                         <div id="left">
-                            <h1>Dynamic Calendar</h1>
-                            <div id="event-section">
-                                <h3>Add Event</h3>
+                            <h1 style="border-radius: 10px;">Calendar of Activities</h1>
+                            <div id="event-section" style="border-radius: 10px; text-align: center;">
+                                <h1 style="font-size: 25px; border-radius: 10px;">Add Event</h1>
                                 <input type="text" id="eventDate" placeholder="Select Date" class="datepicker">
                                 <input type="text" id="eventTitle" placeholder="Event Title">
                                 <input type="text" id="eventDescription" placeholder="Event Description"><br>
-                                <button id="addEvent" onclick="addEvent()"> Add </button>
+                                <button id="addEvent" onclick="addEvent()" style="color: white; font-size: 20px; margin-top:10px; width: 100px; margin-bottom: 10px; border-radius: 10px;"> Add </button>
                             </div>
-                            <div id="reminder-section">
+                            <div id="reminder-section" style="width: 1147px;">
                                 <h3>Reminders</h3>
                                 <!-- List to display reminders -->
                                 <ul id="reminderList">
@@ -130,9 +130,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="row">
+                    <div class="row">
                     <div class="col s12">
                         <div id="event-display-panel">
                             <h6>Events for the Day</h6>
@@ -140,6 +138,7 @@
                             <!-- Event display panel content -->
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </div>

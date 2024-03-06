@@ -28,17 +28,26 @@
         <!-- NavBar -->
         <nav class="nav-extended">
             <div class="nav-wrapper" style="background-color: #00290f">
+<<<<<<< Updated upstream
                 <img src="ImageSrc/Website-Logo-NoSymbol-White.png" width="90px" height="40px" style="margin-top: 15px; margin-left: 40px; margin-bottom: -10px;">
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right: 90px;">
                     <li>
                         <a href="#" style="color: #ffffff;" id="logoutLink">
+=======
+                 <img src="ImageSrc/Website-Logo-NoSymbol-White.png" width="90px" height="40px" style="margin-top: 15px; margin-left: 40px; margin-bottom: -10px;">
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down" style="margin-right: 90px;">
+                    <li>
+                        <!-- Added an ID to the user icon for easier targeting -->
+                        <a href="#" id="userIcon" style="color: #ffffff;">
+>>>>>>> Stashed changes
                             <i class="fa-solid fa-user left" style="color: #ffffff;"></i>
                         </a>
                     </li>
                 </ul>
             </div>
-            <div class="nav-content" style="background-color: #1d6b3a; ">
+            <div class="nav-content" style="background-color: #1d6b3a;">
                 <ul class="tabs tabs-transparent">
                     <li class="tab"><a class="active" href="#accounts" style="font-size: 15px; font-weight: bold;">Accounts</a></li>
                     <li class="tab"><a href="#manage-events" style="font-size: 15px; font-weight: bold;">Manage Events</a></li>
@@ -46,8 +55,21 @@
             </div>
         </nav>
 
+<<<<<<< Updated upstream
         <ul class="sidenav" id="mobile-demo"></ul>
 
+=======
+        <!-- SIDE NAVIGATION -->
+        <ul class="sidenav left-align" id="mobile-demo" style="overflow: hidden; border-radius: 10px; margin-top: 80px;">           
+            <div class="sideNav-Items">
+                <li><a href="index.html" style="font-size: 17px;">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>Logout
+                    </a>
+                </li>
+            </div>
+        </ul>
+        
+>>>>>>> Stashed changes
         <br><br>
         <!-- Accounts Tab -->
         <div class="container">
@@ -192,6 +214,21 @@
                 $('#logoutBtn').on('click', function(){
                     // Perform logout action here, e.g., redirect to logout page
                     window.location.href = 'index.html';
+                });
+            });
+
+            document.addEventListener('DOMContentLoaded', function() {
+                var elemsSidenav = document.querySelectorAll('.sidenav');
+                var optionsSidenav = {
+                    edge: 'left'
+                };
+                var instancesSidenav = M.Sidenav.init(elemsSidenav, optionsSidenav);
+
+                // Add click event listener to the user icon
+                const userIcon = document.getElementById('userIcon');
+                userIcon.addEventListener('click', function() {
+                    const sideNavInstance = M.Sidenav.getInstance(elemsSidenav[0]);
+                    sideNavInstance.open();
                 });
             });
         </script>

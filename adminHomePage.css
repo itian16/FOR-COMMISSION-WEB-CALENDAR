@@ -292,10 +292,10 @@ table.highlight tbody tr:hover {
 
 .confirmation-btns .datepicker-done {
     background-color: #00290f;
-    color: #f3f3f3; /* Text color */
-    border: none; /* Remove default border */
-    border-radius: 5px; /* Add border radius for rounded corners */
-    cursor: pointer; /* Add pointer cursor */
+    color: #f3f3f3; 
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer;
 }
 
 .datepicker-date-display{
@@ -303,6 +303,16 @@ table.highlight tbody tr:hover {
 }
 
 .confirmation-btns .datepicker-cancel {
-    color: #00290f; /* Text color */
+    color: #00290f; 
 }
 
+#mobile-demo{
+   background-color: white;
+   height: 90px;
+   text-align: right;
+}
+
+.sideNav-Items{
+  margin-top: 20px;
+  text-align: left;
+}

@@ -244,7 +244,7 @@
 
 #manage-events{
   width: 1000px;
-  padding: 50px;
+  padding: 25px;
   animation: fadeInForCont-researchers 1s ease-out; 
 }
 
@@ -500,14 +500,13 @@ table.highlight tbody tr:hover {
     background: #f9f9f9;
     padding: 20px;
     border: 1px solid #ccc;
-
 }
 
 .event-card {
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
-    padding: 10px;
+    padding: 25px;
     margin-bottom: 10px;
 }
 
@@ -549,6 +548,7 @@ table.highlight tbody tr:hover {
     background-color: white; /* Adjust background color as needed */
     padding: 0px; /* Adjust padding as needed */
     width: 500px; /* Adjust width as needed */
+    height: 300px;
     border-radius: 5px; /* Adjust border radius as needed */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
     z-index: 9999; /* Ensure it's above other elements */

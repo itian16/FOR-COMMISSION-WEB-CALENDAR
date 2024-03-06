@@ -75,7 +75,7 @@ function updateNotificationBar() {
         // Loop through each event and add it to the notification bar
         let notificationBar = document.getElementById('notificationBar');
         events.forEach(event => {
-            notificationBar.innerHTML += `<p><b>New event added:</b> ${event.title}</p>`;
+            notificationBar.innerHTML += `<p><b>New event added:</b> ${event.title} - ${event.date}</p>`;
         });
     }
 }

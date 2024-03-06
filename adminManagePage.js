@@ -4,6 +4,8 @@ let events = JSON.parse(localStorage.getItem('events')) || [];
 // letiables to store event input fields and reminder list
 let eventDateInput =
     document.getElementById("eventDate");
+let eventTimeInput =
+    document.getElementById("eventTime");
 let eventTitleInput =
     document.getElementById("eventTitle");
 let eventDescriptionInput =
@@ -17,6 +19,7 @@ let eventIdCounter = 1;
 // Function to add events
 function addEvent() {
     let date = eventDateInput.value;
+    let time = eventTimeInput.value;
     let title = eventTitleInput.value;
     let description = eventDescriptionInput.value;
  
@@ -26,13 +29,16 @@ function addEvent() {
  
         events.push(
             {
-                id: eventId, date: date,
+                id: eventId, 
+                date: date,
+                time: time,
                 title: title,
                 description: description
             }
         );
         showCalendar(currentMonth, currentYear);
         eventDateInput.value = "";
+        eventTimeInput.value = "";
         eventTitleInput.value = "";
         eventDescriptionInput.value = "";
         displayReminders();
@@ -89,7 +95,7 @@ function displayReminders() {
         let eventDate = new Date(event.date);
         if (eventDate.getMonth() === currentMonth && eventDate.getFullYear() === currentYear) {
             let listItem = document.createElement("li");
-            listItem.innerHTML = `<strong>${event.title}</strong> - ${event.description} on ${eventDate.toLocaleDateString()}`;
+            listItem.innerHTML = `<strong>${event.title}</strong> - ${event.description} - ${event.time} on ${eventDate.toLocaleDateString()}`;
  
             // Add a delete button for each reminder item
             let deleteButton = document.createElement("button");
@@ -314,7 +320,9 @@ function displayEvents(events) {
             eventCard.classList.add('event-card');
             eventCard.innerHTML = `
                 <h3>${event.title}</h3> 
-                <p>${event.description}</p>`;
+                <p><b>Date:</b> ${event.date}</p>
+                <p><b>Time:</b> ${event.time}</p>
+                <p><b>Description:</b> ${event.description}</p>`;
             eventDisplayPanel.appendChild(eventCard);
         });
     }

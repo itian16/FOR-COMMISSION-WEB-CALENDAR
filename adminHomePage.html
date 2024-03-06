@@ -15,13 +15,13 @@
     <body>
         <!-- Modal Structure -->
         <div id="logoutModal" class="modal">
-            <div class="modal-content">
-                <h4>Confirm Logout</h4>
-                <p>Are you sure you want to log out?</p>
+            <div id="logoutModal" class="modal-content">
+                <h3>Confirm Log-out</h3>
+                <p style="font-size: 15px;">Are you sure you want to log out?</p>
             </div>
             <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
-                <a href="#!" id="logoutBtn" class="waves-effect waves-green btn-flat">Logout</a>
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat" style="color: rgb(0, 158, 21);">Cancel</a>
+                <a href="#!" id="logoutBtn" class="waves-effect waves-green btn-flat" style="color: red;">Logout</a>
             </div>
         </div>
 
@@ -91,6 +91,7 @@
                             <div id="event-section" style="border-radius: 10px; text-align: center;">
                                 <h1 style="font-size: 25px; border-radius: 10px;">Add Event</h1>
                                 <input type="text" id="eventDate" placeholder="Select Date" class="datepicker">
+                                <input type="text" id="eventTime" placeholder="Select Time" class="timepicker">
                                 <input type="text" id="eventTitle" placeholder="Event Title">
                                 <input type="text" id="eventDescription" placeholder="Event Description"><br>
                                 <button id="addEvent" onclick="addEvent()" style="color: white; font-size: 20px; margin-top:10px; width: 100px; margin-bottom: 10px; border-radius: 10px;"> Add </button>
@@ -208,6 +209,10 @@
                     const sideNavInstance = M.Sidenav.getInstance(elemsSidenav[0]);
                     sideNavInstance.open();
                 });
+            });
+
+            $(document).ready(function(){
+                $('.timepicker').timepicker();
             });
         </script>
     </body>

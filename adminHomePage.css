@@ -316,3 +316,19 @@ table.highlight tbody tr:hover {
   margin-top: 20px;
   text-align: left;
 }
+
+/* Log-out Modal */
+#logoutModal{
+    border-radius: 20px;
+    width: 500px;
+    margin-top: 10px;
+}
+
+/* Time Picker */
+.timepicker-digital-display{
+    background-color: #329958;
+}
+
+.btn-flat{
+    color:#329958; 
+}

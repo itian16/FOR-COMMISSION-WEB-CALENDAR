@@ -29,7 +29,7 @@ function deleteUser(email) {
 const defaultUserList = [
     {
         studentID: "0",
-        fullName: "admin",
+        fullName: "admins",
         email: "admin",
         password: "admin"
     }

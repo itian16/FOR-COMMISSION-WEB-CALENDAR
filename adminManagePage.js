@@ -56,10 +56,29 @@ function addEvent() {
 }
 
 // Function to display a notification about the newly added event
-function displayNotification(eventTitle) {  
+function displayNotification(eventTitle, eventId) {
     // Add the event title to the notification bar
     let notificationBar = document.getElementById('notificationBar');
-    notificationBar.innerHTML += `<p>New event added: ${eventTitle}</p>`;
+    let newEventNotification = document.createElement('p');
+    newEventNotification.textContent = `New event added: ${eventTitle}`;
+
+    // Check if the event ID is present in localStorage
+    let viewedEvents = JSON.parse(localStorage.getItem('viewedEvents')) || [];
+    if (!viewedEvents.includes(eventId.toString())) {
+        newEventNotification.style.backgroundColor = '#f8f9fa'; // Set background color if it's the first time viewing
+        viewedEvents.push(eventId.toString()); // Add event ID to viewed events list
+        localStorage.setItem('viewedEvents', JSON.stringify(viewedEvents)); // Update localStorage
+    }
+    else {
+        newEventNotification.style.backgroundColor = 'transparent'; // Set background color to transparent if already viewed
+    }
+    
+    notificationBar.appendChild(newEventNotification);
+}
+
+// Function to clear viewed events from localStorage
+function clearViewedEvents() {
+    localStorage.removeItem('viewedEvents');
 }
 
 // Function to delete an event by ID

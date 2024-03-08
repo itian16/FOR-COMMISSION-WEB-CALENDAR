@@ -27,7 +27,33 @@ document.addEventListener("DOMContentLoaded", function() {
         userList.push(user);
         localStorage.setItem('userList', JSON.stringify(userList));
 
-        // Optionally, you can redirect the user to another page after signup
-        window.location.href = "index.html"; // Redirect to admin home page
+        // Optionally, you can display a success message here
+
+        // Reset the email field
+        signupForm.querySelector("input[name='Email']").value = '';
+
+        // Prevent the other fields from being cleared
+        event.preventDefault();
     });
 });
+
+// Get the email input element
+const emailInput = document.getElementById('emailInput');
+
+// Add event listener for form submission
+document.querySelector('form').addEventListener('submit', function(event) {
+    // Validate the email format
+    if (!isValidEmail(emailInput.value)) {
+        // Prevent form submission
+        event.preventDefault();
+        // Display error message or take appropriate action
+        alert('Please enter a valid email address.');
+    }
+});
+
+// Function to validate email format using regular expression
+function isValidEmail(email) {
+    // Regular expression pattern for email validation
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(email);
+}

@@ -25,9 +25,9 @@
                 <label style="color: #00290F; margin-left: -60px;">Full Name (First Name, M.I., Last Name)</label><br>
                 <input type="text" name="Fullname" required><br>
                 <label style="color: #00290F; margin-left: -295px;">Student ID</label><br>
-                <input type="text" name="StudentID" required><br>
+                <input type="text" name="StudentID" required pattern="[0-9]+" title="Please enter numbers only"><br>
                 <label style="color: #00290F; margin-left: -340px;">Email</label><br>
-                <input type="text" name="Email"required><br>
+                <input type="text" id="emailInput" name="Email" required><br>
                 <label style="color: #00290F; margin-left: -302px;">Password</label><br>
                 <input type="password" name="password" required>
                 <input type="submit" value="SIGN-UP">

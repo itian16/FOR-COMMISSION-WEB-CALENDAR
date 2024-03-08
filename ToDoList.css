@@ -1,13 +1,10 @@
  @import url('https://fonts.cdnfonts.com/css/pp-neue-montreal');
 
-#todolistCont{
-    width: 50%;
-    height: 50%;
-    margin: 0 auto; 
-}
+
 
 #myDIV{
     background-color: #001d0b;
+    border-radius: 5px;
 }
 
 body {
@@ -139,20 +136,21 @@ input {
 
 button{
   padding: 10px;
-  width: 10%;
+
   background: #001d0b;
   color: #ffffff;
   float: right;
   text-align: center;
   font-size: 16px;
   cursor: pointer;
-  transition: 0.3s;
-  border-radius: 20px;
-  margin-top: 15px;
+  transition: 0.1s;
+  border-radius: 5px;
+
 }
 
 a button{
-  margin-left: -20px;
+  /* margin-left: -20px; */
+  margin-top: -60px;
 }
 
 /* Date Picker */

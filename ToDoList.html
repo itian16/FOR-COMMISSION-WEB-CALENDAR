@@ -21,22 +21,31 @@
     <nav class="nav-extended">
         <div class="nav-wrapper" style="background-color: #00290f">
             <img src="ImageSrc/Website-Logo-NoSymbol-White.png" width="90px" height="40px" style="margin-top: 15px; margin-left: 40px; margin-bottom: -10px;">
-            <a href="userHomePage.html">
-                <button>Back to Home Page</button>
-            </a>
+            
         </div>
     </nav>
-    <br><br><br><br>
-    <div id="todolistCont">
-        <div id="myDIV" class="header">
-            <h1 style="margin:5px; font-weight: 800; font-size: 100px;">My To-Do List</h1>
-            <input style="font-size: 30px; color: white;" type="text" id="myInput" placeholder="Title..." required>
-            <input style="font-size: 30px; color: white;" type="text" id="dueDateInput" class="datepicker" placeholder="Due date...">
-            <span style="border-radius: 10px;" onclick="newElement()" class="addBtn">ADD</span>
+
+    <div style="height: 125px;"></div>
+
+    <div class="container">
+        <a href="userHomePage.html">
+            <button><i class="fa-solid fa-arrow-left-long"></i> Back</button> 
+        </a>
+
+        <div style="height: 15px;"></div>
+
+        <div id="todolistCont">
+            <div id="myDIV" class="header">
+                <h1 style="margin:5px; font-weight: 800; font-size: 100px;">My To-Do List</h1>
+                <input style="font-size: 30px; color: white;" type="text" id="myInput" placeholder="Title..." required>
+                <input style="font-size: 30px; color: white;" type="text" id="dueDateInput" class="datepicker" placeholder="Due date...">
+                <span style="border-radius: 10px;" onclick="newElement()" class="addBtn">ADD</span>
+            </div>
+            <ul id="myUL">
+            </ul>
         </div>
-        <ul id="myUL">
-        </ul>
     </div>
+    
     <br><br><br><br>
 
     <!-- jquery cdn -->

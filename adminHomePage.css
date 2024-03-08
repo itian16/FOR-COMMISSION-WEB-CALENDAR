@@ -22,7 +22,7 @@ table.highlight tbody tr:hover {
 
 .custom-th {
     color: #E1E1E1;
-    background-color: #00290f; /* Change this color to the desired background color */
+    background-color: #00290f; 
 }
 
 /* CSS for Calendar Tab */
@@ -35,7 +35,7 @@ table.highlight tbody tr:hover {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
-    border-radius: 15px; /* Adjust the value as needed for the desired rounding */
+    border-radius: 15px; 
 }
  
 /* Event section styling */
@@ -117,14 +117,14 @@ table.highlight tbody tr:hover {
     background: #f5f5f5;
     margin: 20px 0;
     border: 1px solid #ccc;
-    height: 200px; /* Set a fixed height for the reminders section */
-    overflow-y: auto; /* Add vertical scroll bar when content exceeds the height */
+    height: 200px; 
+    overflow-y: auto; 
 }
 
 #reminderList {
     list-style: none;
     padding: 0;
-    margin: 0; /* Remove default margin to prevent extra spacing */
+    margin: 0; 
 }
  
 #reminder-section h3 {
@@ -237,14 +237,13 @@ table.highlight tbody tr:hover {
     padding: 10px 0;
     position: relative;
     z-index: 1;
-    overflow: visible; /* Allow overflow */
-    /* Ensure the container has enough height to display all options */
+    overflow: visible; 
 }
  
 
 .select-dropdown.dropdown-content {
-    max-height: 200px; /* Adjust the maximum height as needed */
-    overflow-y: auto; /* Enable vertical scrolling if needed */
+    max-height: 200px;
+    overflow-y: auto; 
 }
 
 /* Media Query for Mobile Devices */
@@ -262,8 +261,8 @@ table.highlight tbody tr:hover {
     background: #f9f9f9;
     padding: 20px;
     border: 1px solid #ccc;
-    height: 400px; /* Set a fixed height for the panel */
-    overflow-y: auto; /* Add vertical scroll bar when content exceeds the height */
+    height: 400px; 
+    overflow-y: auto; 
 }
 
 .event-card {

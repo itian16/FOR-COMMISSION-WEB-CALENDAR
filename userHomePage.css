@@ -75,12 +75,12 @@
   height: 150px;
   margin-left: 100px;
   margin-top: 350px;
-  opacity: 0; /* Initially hidden */    
+  opacity: 0;   
   left: 0;
   right: 0;
-  top: 50%; /* Adjust as needed */
+  top: 50%; 
   transform: translateY(-50%);
-  animation: slideInName 1s ease forwards; /* Animation applied */
+  animation: slideInName 1s ease forwards; 
 }
 
 #Home-header p {
@@ -89,12 +89,12 @@
   margin-left: 115px;
   margin-top: 5px;
   line-height: 35px;
-  opacity: 0; /* Initially hidden */    
+  opacity: 0;  
   left: 0;
   right: 0;
-  top: 50%; /* Adjust as needed */
+  top: 50%; 
   transform: translateY(-50%);
-  animation: slideInText 1s ease forwards; /* Animation applied */
+  animation: slideInText 1s ease forwards; 
 }
 
 @keyframes slideInName {
@@ -252,8 +252,8 @@
     background: #f9f9f9;
     padding: 20px;
     border: 1px solid #ccc;
-    height: 300px; /* Set a fixed height for the panel */
-    overflow-y: auto; /* Add vertical scroll bar when content exceeds the height */
+    height: 300px; 
+    overflow-y: auto; 
 }
 
 .event-card {
@@ -305,7 +305,7 @@ table.highlight tbody tr:hover {
 
 .custom-th {
     color: #E1E1E1;
-    background-color: #00290f; /* Change this color to the desired background color */
+    background-color: #00290f;
 }
 
 .container-calendar {
@@ -397,16 +397,15 @@ table.highlight tbody tr:hover {
     background: #f5f5f5;
     margin: 20px 0;
     border: 1px solid #ccc;
-    height: 200px; /* Set a fixed height for the reminders section */
-    overflow-y: auto; /* Add vertical scroll bar when content exceeds the height */
+    height: 200px;
+    overflow-y: auto; 
 }
 
 #reminderList {
     list-style: none;
     padding: 0;
-    margin: 0; /* Remove default margin to prevent extra spacing */
+    margin: 0;
 }
-
  
 #reminder-section h3 {
     color: green;
@@ -508,14 +507,13 @@ table.highlight tbody tr:hover {
     padding: 10px 0;
     position: relative;
     z-index: 1;
-    overflow: visible; /* Allow overflow */
-    /* Ensure the container has enough height to display all options */
+    overflow: visible; 
 }
  
 
 .select-dropdown.dropdown-content {
-    max-height: 200px; /* Adjust the maximum height as needed */
-    overflow-y: auto; /* Enable vertical scrolling if needed */
+    max-height: 200px; 
+    overflow-y: auto; 
 }
 
 @media only screen and (max-width: 600px) {
@@ -561,10 +559,10 @@ table.highlight tbody tr:hover {
 
 .confirmation-btns .datepicker-done {
     background-color: #00290f;
-    color: #f3f3f3; /* Text color */
-    border: none; /* Remove default border */
-    border-radius: 5px; /* Add border radius for rounded corners */
-    cursor: pointer; /* Add pointer cursor */
+    color: #f3f3f3; 
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer; 
 }
 
 .datepicker-date-display{
@@ -572,19 +570,19 @@ table.highlight tbody tr:hover {
 }
 
 .confirmation-btns .datepicker-cancel {
-    color: #00290f; /* Text color */
+    color: #00290f; 
 }
 
 #notificationModal {
     position: absolute;
-    background-color: white; /* Adjust background color as needed */
-    padding: 0px; /* Adjust padding as needed */
-    width: 500px; /* Adjust width as needed */
+    background-color: white; 
+    padding: 0px; 
+    width: 500px; 
     height: 300px;
-    border-radius: 5px; /* Adjust border radius as needed */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
-    z-index: 9999; /* Ensure it's above other elements */
-    display: none; /* Initially hide it */
+    border-radius: 5px; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    display: none;
 }
 
 .notification-indicator {

@@ -16,6 +16,48 @@ let reminderList =
 // Counter to generate unique event IDs
 let eventIdCounter = 1;
  
+// Function to add default events
+function addDefaultEvents() {
+    // Define default events
+    const defaultEvents = [
+        { date: '2024-02-26', time: '08:00 AM', title: 'Art Exhibit', description: 'This is the first Senior High School Event that enhances the creativity and art appreciation of Grade 11 and 12 students.' },
+        { date: '2024-02-27', time: '07:00 AM', title: 'Foundation Day', description: 'The Foundation Day for Grade 11 and 12 SHS students at the University of Cabuyao is an annual celebration marking the university establishment. It includes academic competitions, sports events, cultural presentations, and social gatherings to foster unity and pride among students.' },
+        { date: '2024-02-27', time: '08:00 AM', title: 'Color Parade', description: 'The Color Parade is a vibrant part of the Foundation Day celebration for Grade 11 and 12 SHS students at the University of Cabuyao. It involves students showcasing their creativity and school spirit by dressing up in their school colors or themed costumes and parading around the campus. This lively event adds excitement and energy to the festivities, fostering a sense of unity and pride among the students.' },
+        { date: '2023-04-16', time: '05:00 AM', title: 'Bubble Run', description: 'The Bubble Run is a fun and colorful activity incorporated into the Foundation Day celebration for Grade 11 and 12 SHS students at the University of Cabuyao. Participants run or walk through a course filled with foam bubbles, creating a lively and exhilarating atmosphere. This event promotes physical fitness, teamwork, and camaraderie among students, while adding an element of excitement and joy to the festivities.' },
+        { date: '2023-10-23', time: '08:00 AM', title: 'Sportsfest', description: 'The Sports Fest for both Senior High School (SHS) and college students at the University of Cabuyao is a thrilling event that promotes sportsmanship, teamwork, and healthy competition. It features various sports competitions such as basketball, volleyball, football, and track and field, among others. Students from both SHS and college divisions compete against each other, showcasing their athletic skills and school pride. The Sports Fest fosters camaraderie and unity among students across different academic levels, creating a vibrant and lively atmosphere on campus.' }
+    ];
+
+    // Check if default events are already added
+    const defaultEventsAdded = defaultEvents.every(defaultEvent => {
+        return events.some(event => {
+            return event.date === defaultEvent.date &&
+                   event.title === defaultEvent.title;
+        });
+    });
+
+    // Add default events only if they are not already added
+    if (!defaultEventsAdded) {
+        defaultEvents.forEach(event => {
+            events.push({
+                id: eventIdCounter++,
+                date: event.date,
+                time: event.time,
+                title: event.title,
+                description: event.description
+            });
+        });
+
+        // Update the display
+        showCalendar(currentMonth, currentYear);
+        displayReminders();
+    }
+}
+
+// Call the addDefaultEvents function after DOM content is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    addDefaultEvents();
+});
+
 // Function to add events
 function addEvent() {
     let date = eventDateInput.value;
@@ -52,6 +94,8 @@ function addEvent() {
 
         // Display a notification about the new event
         displayNotification(title);
+
+        
     }
 }
 

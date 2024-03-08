@@ -37,13 +37,8 @@ const defaultUserList = [
 
 // Function to initialize localStorage with default data if it doesn't exist
 function initializeDefaultData() {
-    let userList = JSON.parse(localStorage.getItem('userList')) || [];
-    // Check if admin user already exists in userList
-    const adminExists = userList.some(user => user.email === "admin");
-    if (!adminExists) {
-        // Add admin user to userList if it doesn't exist
-        userList.push(defaultUserList[0]);
-        localStorage.setItem('userList', JSON.stringify(userList));
+    if (!localStorage.getItem('userList')) {
+        localStorage.setItem('userList', JSON.stringify(defaultUserList));
     }
 }
 

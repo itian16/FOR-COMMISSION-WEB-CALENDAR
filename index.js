@@ -32,9 +32,21 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Password doesn't match
                 alert("Invalid password");
             }
-        } else {
+        } // Update your existing code for user not found alert
+        else {
             // User not found
-            alert("User not found");
+            displayCustomAlert("User not found");
+        }
+
+        // Function to display custom alert
+        function displayCustomAlert(message) {
+            const customAlert = document.getElementById("custom-alert");
+            const alertMessage = document.getElementById("alert-message");
+            alertMessage.textContent = message;
+            customAlert.classList.add("show");
+            setTimeout(() => {
+                customAlert.classList.remove("show");
+            }, 3000); // Adjust the time (in milliseconds) the alert stays visible
         }
     });
 });

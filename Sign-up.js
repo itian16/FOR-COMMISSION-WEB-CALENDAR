@@ -27,13 +27,19 @@ document.addEventListener("DOMContentLoaded", function() {
         userList.push(user);
         localStorage.setItem('userList', JSON.stringify(userList));
 
-        // Optionally, you can display a success message here
-
         // Reset the email field
         signupForm.querySelector("input[name='Email']").value = '';
 
         // Prevent the other fields from being cleared
         event.preventDefault();
+         // Show success message
+        const successMessage = document.getElementById("success-message");
+        successMessage.style.display = "block";
+
+        // Optionally, you can redirect the user after a delay
+        setTimeout(function() {
+            window.location.href = "index.html"; // Redirect to admin home page
+        }, 2000); // Redirect after 2 seconds (2000 milliseconds)
     });
 });
 

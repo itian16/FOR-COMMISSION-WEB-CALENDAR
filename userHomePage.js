@@ -72,15 +72,25 @@ function updateNotificationBar() {
     let storedEvents = localStorage.getItem('events');
     if (storedEvents) {
         let events = JSON.parse(storedEvents);
-        // Loop through each event and add it to the notification bar
+        
+        // Filter out events that are in the past
+        const currentDate = new Date();
+        events = events.filter(event => new Date(event.date) > currentDate);
+        
+        // Retrieve viewed events from localStorage
+        let viewedEvents = JSON.parse(localStorage.getItem('viewedEvents')) || [];
+
+        // Loop through each event and add it to the notification bar if it hasn't been viewed
         let notificationBar = document.getElementById('notificationBar');
         events.forEach(event => {
-            notificationBar.innerHTML += `<p><b>New event added:</b> ${event.title} - ${event.date}</p>`;
+            if (!viewedEvents.includes(event.id.toString())) {
+                notificationBar.innerHTML += `<p><b>New event added:</b> ${event.title} - ${event.date}</p>`;
+            }
         });
 
-        // Add notification indicator to the notification button
+        // Add notification indicator to the notification button if there are unviewed events
         let notificationLink = document.getElementById('notificationLink');
-        if (events.length > 0) {
+        if (events.some(event => !viewedEvents.includes(event.id.toString()))) {
             notificationLink.innerHTML += '<span class="notification-indicator"></span>';
         }
 
@@ -91,9 +101,18 @@ function updateNotificationBar() {
             if (notificationIndicator) {
                 notificationIndicator.remove();
             }
+
+            // Store the IDs of viewed events
+            events.forEach(event => {
+                if (!viewedEvents.includes(event.id.toString())) {
+                    viewedEvents.push(event.id.toString());
+                }
+            });
+            localStorage.setItem('viewedEvents', JSON.stringify(viewedEvents));
         });
     }
 }
+
 
 // Call the function to update the notification bar when the page loads
 document.addEventListener('DOMContentLoaded', function () {

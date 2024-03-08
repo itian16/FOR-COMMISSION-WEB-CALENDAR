@@ -249,9 +249,36 @@
 }
 
 #event-display-panel {
-  width: 800px; /* Set the width of the container */
-  word-wrap: break-word; /* For non-flexible layouts */
-  overflow-wrap: break-word; /* For flexible layouts */
+    background: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ccc;
+    height: 300px; /* Set a fixed height for the panel */
+    overflow-y: auto; /* Add vertical scroll bar when content exceeds the height */
+}
+
+.event-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 25px;
+    margin-bottom: 10px;
+}
+
+.event-card h3 {
+    margin-top: 0;
+    color: #00290f;
+}
+
+.event-card p {
+    margin: 5px 0;
+}
+
+.delete-event {
+    background: rgb(237, 19, 19);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
 }
 
 body {
@@ -553,4 +580,13 @@ table.highlight tbody tr:hover {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
     z-index: 9999; /* Ensure it's above other elements */
     display: none; /* Initially hide it */
+}
+
+.notification-indicator {
+    position: absolute;
+    margin-top: 10px;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
 }

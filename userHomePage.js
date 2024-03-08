@@ -77,6 +77,21 @@ function updateNotificationBar() {
         events.forEach(event => {
             notificationBar.innerHTML += `<p><b>New event added:</b> ${event.title} - ${event.date}</p>`;
         });
+
+        // Add notification indicator to the notification button
+        let notificationLink = document.getElementById('notificationLink');
+        if (events.length > 0) {
+            notificationLink.innerHTML += '<span class="notification-indicator"></span>';
+        }
+
+        // Event listener to remove notification indicator when notification button is clicked
+        notificationLink.addEventListener('click', function() {
+            // Remove the notification indicator
+            let notificationIndicator = document.querySelector('.notification-indicator');
+            if (notificationIndicator) {
+                notificationIndicator.remove();
+            }
+        });
     }
 }
 
@@ -84,6 +99,7 @@ function updateNotificationBar() {
 document.addEventListener('DOMContentLoaded', function () {
     updateNotificationBar();
 });
+
 
 document.addEventListener('DOMContentLoaded', function() {
     // Retrieve user data from localStorage

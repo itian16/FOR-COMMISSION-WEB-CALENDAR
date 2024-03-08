@@ -255,20 +255,19 @@ table.highlight tbody tr:hover {
     }
 }
 
-/* Style for the event display panel */
 #event-display-panel {
     background: #f9f9f9;
     padding: 20px;
     border: 1px solid #ccc;
-
+    height: 400px; /* Set a fixed height for the panel */
+    overflow-y: auto; /* Add vertical scroll bar when content exceeds the height */
 }
 
-/* Style for event cards */
 .event-card {
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
-    padding: 10px;
+    padding: 25px;
     margin-bottom: 10px;
 }
 
@@ -281,7 +280,6 @@ table.highlight tbody tr:hover {
     margin: 5px 0;
 }
 
-/* Style for delete button in event cards */
 .delete-event {
     background: rgb(237, 19, 19);
     color: white;

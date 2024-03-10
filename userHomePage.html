@@ -50,16 +50,18 @@
         </nav>
 
         <!-- Modal Structure -->
-        <div id="notificationModal" class="modal">
+        <div id="profileModal" class="modal">
             <div class="modal-content">
-                <div id="notificationBar">
-                    <!-- Notification content will be displayed here -->
-                </div>
+                <h1 style="color: #00290F;">User Profile</h1>
+                <p id="profileName" style="margin-bottom: -25px;"></p>
+                <p id="profileStudentID" style="margin-bottom: -25px;"></p>
+                <p id="profileEmail"></p>
             </div>
             <div class="modal-footer">
                 <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
             </div>
         </div>
+
 
         <!-- PROFILE MENU BAR -->
         <a style="color: #00290F;"  data-target="mobile-demo" class="sidenav-trigger">
@@ -70,16 +72,20 @@
         <ul class="sidenav left-align" id="mobile-demo" style="overflow: hidden; border-radius: 10px; margin-top: 70px;">           
             <div class="sideNav-Items">
                 <li>
-                    <a href="#profileModal" class="modal-trigger" style="font-size: 17px;">
-                        <i class="fa-regular fa-user"></i>My Profile
+                    <a href="#profileModal" class="modal-trigger" style="font-size: 17px; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                        <i class="fa-regular fa-user"></i>
+                        <span style="vertical-align: middle;">My Profile</span>
                     </a>
                 </li>
-                <li><a href="index.html" style="font-size: 17px;">
-                        <i class="fa-solid fa-arrow-right-from-bracket"></i>Logout
+                <li>
+                    <a href="index.html" style="font-size: 17px;">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <span style="vertical-align: middle;">Logout</span>
                     </a>
                 </li>
             </div>
         </ul>
+
 
         <!-- Modal Structure -->
         <div id="profileModal" class="modal">

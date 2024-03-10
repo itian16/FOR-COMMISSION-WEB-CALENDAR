@@ -120,15 +120,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Retrieve user data from localStorage
-    const currentUser = JSON.parse(localStorage.getItem('currentUser'));
-    if (currentUser) {
-        // Populate My Profile tab with user's full name
-        const profileTab = document.querySelector('.modal-trigger');
-        profileTab.innerHTML = `<i class="fa-regular fa-user"></i>${currentUser.fullName}`;
-    }
-});
 
 document.addEventListener('DOMContentLoaded', function() {
     // Retrieve user data from localStorage
@@ -147,5 +138,13 @@ document.addEventListener('DOMContentLoaded', function() {
         profileName.textContent = `Name: ${currentUser.fullName}`;
         profileStudentID.textContent = `Student ID: ${currentUser.studentID}`;
         profileEmail.textContent = `Email: ${currentUser.email}`;
+
+        // Adjust font size based on name length
+        if (currentUser.fullName.length > 15) {
+            profileName.style.fontSize = '30px'; // Set font size smaller for longer names
+        }
     }
 });
+
+
+

@@ -5,15 +5,18 @@ function loadEventsFromLocalStorage() {
         events = JSON.parse(storedEvents);
     }
 }
+
 // Function to save events to local storage
 function saveEventsToLocalStorage() {
     localStorage.setItem('events', JSON.stringify(events));
 }
+
 // Load events from local storage when the page loads
 document.addEventListener('DOMContentLoaded', function () {
     loadEventsFromLocalStorage();
     showCalendar(currentMonth, currentYear);
 });
+
 // Function to add events
 function addEvent() {
     let date = eventDateInput.value;
@@ -38,6 +41,7 @@ function addEvent() {
         displayReminders();
     }
 }
+
 // Function to delete an event by ID
 function deleteEvent(eventId) {
     // Find the index of the event with the given ID
@@ -53,10 +57,12 @@ function deleteEvent(eventId) {
         saveEventsToLocalStorage();
     }
 }
- // Scroll Spy
+
+// Scroll Spy
 $(document).ready(function(){
     $('.scrollspy').scrollSpy();
 });
+
 // Side Navigation
 document.addEventListener('DOMContentLoaded', function () {
     var elemsSidenav = document.querySelectorAll('.sidenav');
@@ -66,49 +72,53 @@ document.addEventListener('DOMContentLoaded', function () {
     var instancesSidenav = M.Sidenav.init(elemsSidenav, optionsSidenav);
 });
 
-// Function to retrieve newly added events and update the notification bar
+// Update notification bar
 function updateNotificationBar() {
-    // Retrieve events from localStorage
     let storedEvents = localStorage.getItem('events');
     if (storedEvents) {
         let events = JSON.parse(storedEvents);
-        
-        // Filter out events that are in the past
         const currentDate = new Date();
-        events = events.filter(event => new Date(event.date) > currentDate);
-        
-        // Retrieve viewed events from localStorage
-        let viewedEvents = JSON.parse(localStorage.getItem('viewedEvents')) || [];
 
-        // Loop through each event and add it to the notification bar if it hasn't been viewed
         let notificationBar = document.getElementById('notificationBar');
+        let newEventsDisplayed = false;
+
         events.forEach(event => {
-            if (!viewedEvents.includes(event.id.toString())) {
+            if (new Date(event.date) > currentDate) {
+                // Add event title and date to the notification bar
                 notificationBar.innerHTML += `<p><b>New event added:</b> ${event.title} - ${event.date}</p>`;
+                // Add the date when the event is added at the bottom of the event
+                notificationBar.innerHTML += `<p style="font-size: 12px; color: gray; margin-bottom: 5px; margin-top: -13px;">Added on: ${new Date().toLocaleDateString()}</p>`;
+                newEventsDisplayed = true;
             }
         });
 
-        // Add notification indicator to the notification button if there are unviewed events
         let notificationLink = document.getElementById('notificationLink');
-        if (events.some(event => !viewedEvents.includes(event.id.toString()))) {
+        if (newEventsDisplayed) {
             notificationLink.innerHTML += '<span class="notification-indicator"></span>';
         }
 
-        // Event listener to remove notification indicator when notification button is clicked
         notificationLink.addEventListener('click', function() {
-            // Remove the notification indicator
             let notificationIndicator = document.querySelector('.notification-indicator');
             if (notificationIndicator) {
                 notificationIndicator.remove();
             }
 
-            // Store the IDs of viewed events
+            let viewedEvents = JSON.parse(localStorage.getItem('viewedEvents')) || [];
             events.forEach(event => {
-                if (!viewedEvents.includes(event.id.toString())) {
+                if (new Date(event.date) > currentDate && !viewedEvents.includes(event.id.toString())) {
                     viewedEvents.push(event.id.toString());
                 }
             });
             localStorage.setItem('viewedEvents', JSON.stringify(viewedEvents));
+        });
+
+        // Add event listener to remove red indicator when notification modal is hidden
+        let notificationModal = document.getElementById('notificationModal');
+        $(notificationModal).on('hidden.bs.modal', function () {
+            let notificationIndicator = document.querySelector('.notification-indicator');
+            if (notificationIndicator) {
+                notificationIndicator.remove();
+            }
         });
     }
 }
@@ -119,6 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
     updateNotificationBar();
 });
 
+// Display user profile
 document.addEventListener('DOMContentLoaded', function() {
     // Retrieve user data from localStorage
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));
@@ -143,6 +154,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
-
-
-

@@ -33,6 +33,12 @@
 }
 
 /* --- For Profile Modal --- */
+
+#profileModal .modal-content {
+  max-height: 400px; /* Adjust height as needed */
+  overflow-y: auto;
+}
+
 #profileModal{
   width: 650px;
   height: 400px;
@@ -43,11 +49,6 @@
 
 #profileModal p{
  font-size: 30px;
-}
-
-#profileModal .modal-content {
-  max-height: 400px; /* Adjust height as needed */
-  overflow-y: auto;
 }
 
 #profileModal h3{

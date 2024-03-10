@@ -119,8 +119,6 @@ document.addEventListener('DOMContentLoaded', function () {
     updateNotificationBar();
 });
 
-
-
 document.addEventListener('DOMContentLoaded', function() {
     // Retrieve user data from localStorage
     const currentUser = JSON.parse(localStorage.getItem('currentUser'));

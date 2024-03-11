@@ -599,3 +599,16 @@ table.highlight tbody tr:hover {
     background-color: red;
     border-radius: 50%;
 }
+
+.date-picker.selected{
+    background-color: #cacaca;
+    outline: 1px solid black;
+}
+
+.date-picker.event-marker{
+    background-color: #5fa052;
+}
+
+.event-marker::after {
+    background-color: #5fa052;
+}

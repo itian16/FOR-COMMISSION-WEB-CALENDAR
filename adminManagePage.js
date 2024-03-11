@@ -381,12 +381,24 @@ function displayEvents(events) {
         events.forEach(event => {
             const eventCard = document.createElement('div');
             eventCard.classList.add('event-card');
+            // Generate a random color for the event title background
+            const randomColor = generateRandomColor();
             eventCard.innerHTML = `
-                <h3>${event.title}</h3> 
+                <h3 style="background-color: ${randomColor}; padding: 10px; border-radius:10px;">${event.title}</h3> 
                 <p><b>Date:</b> ${event.date}</p>
                 <p><b>Time:</b> ${event.time}</p>
                 <p><b>Description:</b> ${event.description}</p>`;
             eventDisplayPanel.appendChild(eventCard);
         });
     }
+}
+
+// Function to generate a random color
+function generateRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
 }

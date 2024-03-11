@@ -83,7 +83,12 @@ function updateNotificationBar() {
         let newEventsDisplayed = false;
 
         events.forEach(event => {
-            if (new Date(event.date) > currentDate) {
+            const eventDate = new Date(event.date);
+            // Get the current date without the time component
+            const currentDateWithoutTime = new Date();
+            currentDateWithoutTime.setHours(0, 0, 0, 0);
+
+            if (eventDate.getTime() >= currentDateWithoutTime.getTime()) {
                 // Add event title and date to the notification bar
                 notificationBar.innerHTML += `<p><b>New event added:</b> ${event.title} - ${event.date}</p>`;
                 // Add the date when the event is added at the bottom of the event

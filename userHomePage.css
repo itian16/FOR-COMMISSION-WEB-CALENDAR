@@ -612,3 +612,16 @@ table.highlight tbody tr:hover {
 .event-marker::after {
     background-color: #5fa052;
 }
+
+/* for lente */
+#lenteCredits{
+  color: green;
+  font-size: 20px;
+  margin-left: 490px;
+}
+
+#lenteCredits:hover {
+  color: rgb(1, 194, 1);
+  font-size: 20px;
+  margin-left: 490px;
+}
